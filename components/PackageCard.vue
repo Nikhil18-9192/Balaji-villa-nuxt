@@ -40,6 +40,7 @@ export default {
     filter: drop-shadow(18px 25px 0px rgba(0, 0, 0, 0.09));
   }
   .card {
+    position: relative;
     height: 463px;
     width: 279px;
     background: #fff;
@@ -69,6 +70,26 @@ export default {
         text-align: center;
         letter-spacing: 0.035em;
       }
+    }
+    &::after {
+      content: '';
+      width: 200px;
+      height: 1px;
+      background: #c8c8c8;
+      position: absolute;
+      bottom: 37px;
+      left: -17px;
+      transform: rotate(33.5deg);
+    }
+    &::before {
+      content: '';
+      width: 200px;
+      height: 1px;
+      background: #c8c8c8;
+      position: absolute;
+      bottom: 37px;
+      right: -17px;
+      transform: rotate(-33.5deg);
     }
   }
 }
