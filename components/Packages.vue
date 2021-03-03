@@ -7,25 +7,47 @@
     <div class="card-container">
       <PackageCard title="Package 1" price="Rs.2,400 " quantity="PER HEAD">
         <div class="card1">
-          <p>Lunch Evening Tea Dinner Stay Breakfast Veg. / Non Veg.</p>
-          <hr />
-          <p>Check In : 12 Noon Check Out : 10 AM</p>
+          <p>Lunch</p>
+          <p>Evening Tea</p>
+          <p>Dinner</p>
+          <p>Stay</p>
+          <p>Breakfast</p>
+          <p>Veg. / Non Veg.</p>
+          <div class="line"></div>
+          <p class="bottom-txt">
+            Check In : <span style="color: #acacac">12 Noon</span>
+          </p>
+          <p class="bottom-txt">
+            Check Out : <span style="color: #acacac">10 AM</span>
+          </p>
         </div>
       </PackageCard>
       <PackageCard title="Package 2" price="Rs. 15,000  " quantity="PER NIGHT">
         <div class="card1">
-          <p>Lunch Evening Tea Dinner Stay Breakfast Veg. / Non Veg.</p>
-          <hr />
-          <p>Check In : 12 Noon Check Out : 10 AM</p>
+          <p>
+            Accomodation of <br />
+            full villa
+          </p>
+          <div class="line"></div>
+          <p>8 Adults + 8 Children</p>
+          <p>(below 8 Yrs)</p>
+          <p style="color: #acacac; font-size: 18px">OR</p>
+          <p>12 Adults</p>
         </div>
       </PackageCard>
       <PackageCard title="Package 3" price="Rs. 55000  " quantity="PER DAY">
         <div class="card1">
-          <p>Lunch Evening Tea Dinner Stay Breakfast Veg. / Non Veg.</p>
-          <hr />
-          <p>Check In : 12 Noon Check Out : 10 AM</p>
+          <p>Wedding / Function</p>
+          <div class="line"></div>
+          <p>250 People</p>
         </div>
       </PackageCard>
+    </div>
+    <div class="footer-text">
+      <p class="number">+91 93 7373 1717 | +91 89 7598 8689</p>
+      <p class="address">
+        C S No 643 Opp Panhala Club, Panhala, Maharashtra 416114
+      </p>
     </div>
   </div>
 </template>
@@ -40,11 +62,20 @@ export default {
 <style lang="scss" scoped>
 #packages {
   position: relative;
-  padding: 55px 88px 200px 88px;
+  padding: 55px 88px 115px 88px;
   background: #f9f9f9;
+  @include for-phone-only {
+    padding: 30px;
+  }
+  @include for-tablet-only {
+    padding: 55px 60px 85px 60px;
+  }
   .title {
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
+    @include for-phone-only {
+      padding-bottom: 30px;
+    }
     h1 {
       font-family: 'Tangerine';
       font-weight: normal;
@@ -64,18 +95,55 @@ export default {
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .card1 {
-    hr {
-      background: radial-gradient(
-        1149.27% 50% at 50% 50%,
-        #000000 0%,
-        rgba(255, 255, 255, 0) 99.99%,
-        rgba(196, 196, 196, 0) 100%
+    margin-top: 10px;
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 178.69%;
+      text-align: center;
+      letter-spacing: 0.035em;
+    }
+    .line {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 20%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(255, 255, 255, 1) 80%
       );
       height: 1px;
-      width: 200px;
+      width: 210px;
+      margin: 18px auto;
+    }
+    .bottom-txt {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 144.39%;
+      text-align: center;
+      letter-spacing: 0.035em;
+    }
+  }
+  .footer-text {
+    margin-top: 100px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    @include for-phone-only {
+      margin-top: 0;
+      font-size: 16px;
+    }
+    .number {
+      color: #000000;
+      margin-bottom: 20px;
+    }
+    .address {
+      color: #9c9c9c;
     }
   }
 }

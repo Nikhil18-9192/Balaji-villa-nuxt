@@ -47,6 +47,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
   ],
+  styleResources: {
+    scss: ['~assets/global.scss'],
+  },
+
   devModules: ['@nuxtjs/eslint-module'],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -7,17 +7,34 @@
     <client-only>
       <carousel
         class="carousel"
-        :per-page="3"
+        :perPageCustom="[
+          [375, 1],
+          [768, 2],
+          [1200, 3],
+        ]"
         :loop="true"
+        :autoplay="true"
+        :autoplayTimeout="5000"
         :mouse-drag="true"
         :paginationEnabled="false"
       >
         <slide class="slide" v-for="(slide, i) in slides" :key="i">
-          <img class="image" v-if="slide.src" :src="slide.src" alt="" />
-          <div class="text" v-else>
-            <h4>{{ slide.title }}</h4>
-            <hr />
-            <p>{{ slide.desc }}</p>
+          <div
+            class="slide-content"
+            @mouseover="hoverEvent(i)"
+            @mouseleave="outEvent"
+          >
+            <img
+              v-if="!hover || i !== index"
+              class="image"
+              :src="slide.src"
+              alt=""
+            />
+            <div class="text" v-if="hover && i === index">
+              <h4>{{ slide.title }}</h4>
+              <hr />
+              <p>{{ slide.desc }}</p>
+            </div>
           </div>
         </slide>
       </carousel>
@@ -35,20 +52,58 @@ export default {
   },
   data() {
     return {
+      hover: false,
+      index: -1,
       slides: [
-        { src: '/rankala.jpg' },
         {
+          src: '/rankala.jpg',
           title: 'Rankala Lake',
           desc:
             'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
         },
-        { src: '/panhala.jpg' },
-        { src: '/mahalaxmi.jpg' },
-        { src: '/rankala.jpg' },
-        { src: '/panhala.jpg' },
-        { src: '/mahalaxmi.jpg' },
+
+        {
+          src: '/panhala.jpg',
+          title: 'Panhala Fort',
+          desc:
+            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
+        },
+        {
+          src: '/mahalaxmi.jpg',
+          title: 'Mahalaxmi Temple',
+          desc:
+            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
+        },
+        {
+          src: '/rankala.jpg',
+          title: 'Rankala Lake',
+          desc:
+            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
+        },
+        {
+          src: '/panhala.jpg',
+          title: 'Panhala Fort',
+          desc:
+            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
+        },
+        {
+          src: '/mahalaxmi.jpg',
+          title: 'Mahalaxmi Temple',
+          desc:
+            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
+        },
       ],
     }
+  },
+  methods: {
+    hoverEvent(i) {
+      this.index = i
+      this.hover = true
+    },
+    outEvent() {
+      this.index = -1
+      this.hover = false
+    },
   },
 }
 </script>
@@ -59,10 +114,17 @@ export default {
   position: relative;
   height: 728px;
   padding: 0 88px;
+  @include for-phone-only {
+    padding: 0 30px;
+    height: 600px;
+  }
   .title {
     text-align: center;
     padding-top: 48px;
     padding-bottom: 100px;
+    @include for-phone-only {
+      padding: 30px 0;
+    }
     h1 {
       font-family: 'Tangerine';
       font-weight: normal;
@@ -84,13 +146,16 @@ export default {
     position: relative;
     .slide {
       width: 100%;
+      cursor: pointer;
       .image {
+        transition: 0.3s ease all;
         object-fit: contain;
         width: 326px;
         height: 345px;
         clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
       }
       .text {
+        transition: 0.3s ease all;
         background: #fbf2dc;
         width: 326px;
         height: 345px;
@@ -99,6 +164,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-left: 8px;
         h4 {
           color: #515151;
           font-weight: normal;

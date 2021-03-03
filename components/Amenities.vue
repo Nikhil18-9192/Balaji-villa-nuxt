@@ -1,5 +1,6 @@
 <template>
   <div id="amenities">
+    <img class="bg-img" src="plant.png" alt="" />
     <div class="title">
       <h1>Amenities</h1>
       <img src="title-img2.png" alt="" />
@@ -77,9 +78,27 @@ export default {
 #amenities {
   position: relative;
   padding: 40px 88px 140px 88px;
+  @include for-phone-only {
+    padding: 40px 30px 40px 30px;
+  }
+  .bg-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    @include for-phone-only {
+      right: 0px;
+    }
+    @include for-tablet-only {
+      right: 0px;
+    }
+  }
   .title {
     text-align: center;
     padding-bottom: 100px;
+    @include for-phone-only {
+      padding-bottom: 30px;
+    }
     h1 {
       font-family: 'Tangerine';
       font-weight: normal;
@@ -99,17 +118,28 @@ export default {
   .grid-container {
     display: flex;
     // gap: 60px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     .col {
       position: relative;
       padding: 0 80px;
       display: flex;
+      flex-wrap: wrap;
       gap: 80px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       min-height: 470px;
+      @include for-phone-only {
+        padding: 0 30px;
+        gap: 30px;
+        min-height: 380px;
+      }
+      @include for-tablet-only {
+        padding: 0 60px;
+        min-height: 510px;
+      }
       .item {
         min-height: 80px;
         text-align: center;
@@ -142,17 +172,27 @@ export default {
         position: absolute;
         right: 0;
         top: 0;
+        @include for-phone-only {
+          display: none;
+        }
       }
     }
     .col-last {
       position: relative;
       padding: 0 80px;
       display: flex;
+      flex-wrap: wrap;
       gap: 80px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       min-height: 470px;
+      @include for-phone-only {
+        padding: 0 45px;
+        gap: 60px;
+        flex-direction: row;
+        min-height: 250px;
+      }
       .item {
         min-height: 80px;
         text-align: center;

@@ -34,6 +34,9 @@ export default {}
   position: relative;
   width: 100%;
   height: 793px;
+  @include for-phone-only {
+    height: 635px;
+  }
   .overlay {
     background: rgba(0, 0, 0, 0.493);
     position: absolute;
@@ -56,6 +59,9 @@ export default {}
     line-height: 146.69%;
     letter-spacing: 0.12em;
     color: #fff;
+    @include for-phone-only {
+      top: 30px;
+    }
     img {
       object-fit: contain;
       max-width: 300px;
@@ -64,6 +70,12 @@ export default {}
     }
     .para {
       width: 781px;
+      @include for-phone-only {
+        width: 350px;
+      }
+      @include for-tablet-only {
+        width: 600px;
+      }
     }
     .title {
       margin: 52px 0 17px 0;
