@@ -19,22 +19,31 @@
         :mouse-drag="true"
         :paginationEnabled="false"
       >
-        <slide class="slide" v-for="(slide, i) in slides" :key="i">
+        <slide
+          class="slide"
+          v-for="(slide, i) in slides"
+          :key="slide.title + i"
+        >
           <div
             class="slide-content"
-            @mouseover="hoverEvent(i)"
+            @mouseenter="hoverEvent(i)"
             @mouseleave="outEvent"
           >
             <transition name="image">
               <img
                 v-if="!hover || i !== index"
                 class="image"
+                :style="{ clipPath: shapes[i % shapes.length] }"
                 :src="slide.src"
                 alt=""
               />
             </transition>
             <transition name="text">
-              <div class="text" v-if="hover && i === index">
+              <div
+                class="text"
+                :style="{ clipPath: shapes[i % shapes.length] }"
+                v-if="hover && i === index"
+              >
                 <h4>{{ slide.title }}</h4>
                 <hr />
                 <p>{{ slide.desc }}</p>
@@ -50,6 +59,7 @@
 <script>
 import Carousel from 'vue-carousel/src/Carousel.vue'
 import Slide from 'vue-carousel/src/Slide.vue'
+import { slides } from '@/utils'
 export default {
   components: {
     Carousel,
@@ -59,47 +69,17 @@ export default {
     return {
       hover: false,
       index: -1,
-      slides: [
-        {
-          src: '/rankala.jpg',
-          title: 'Rankala Lake',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
 
-        {
-          src: '/panhala.jpg',
-          title: 'Panhala Fort',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
-        {
-          src: '/mahalaxmi.jpg',
-          title: 'Mahalaxmi Temple',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
-        {
-          src: '/rankala.jpg',
-          title: 'Rankala Lake',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
-        {
-          src: '/panhala.jpg',
-          title: 'Panhala Fort',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
-        {
-          src: '/mahalaxmi.jpg',
-          title: 'Mahalaxmi Temple',
-          desc:
-            'Rankala Lake is on the western side of Ambabai temple , it is a popular evening spot and recreation centre.',
-        },
+      shapes: [
+        'polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%)',
+        'polygon(10% 14%, 53% 1%, 100% 44%, 72% 91%, 15% 94%, 0% 50%)',
+        'polygon(41% 0, 100% 32%, 95% 89%, 51% 99%, 5% 78%, 0 31%)',
+        'polygon(23% 8%, 82% 4%, 100% 53%, 72% 91%, 15% 95%, 0 40%)',
       ],
+      randomIndex: 0,
     }
   },
+  mounted() {},
   methods: {
     hoverEvent(i) {
       this.index = i
@@ -108,6 +88,11 @@ export default {
     outEvent() {
       this.index = -1
       this.hover = false
+    },
+  },
+  computed: {
+    slides() {
+      return slides
     },
   },
 }
@@ -158,16 +143,16 @@ export default {
       width: 100%;
       cursor: pointer;
       .image {
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
         height: 100%;
-        clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
+        // clip-path: polygon(23% 8%, 82% 4%, 100% 53%, 72% 91%, 15% 95%, 0 40%);
       }
       .text {
         background: #fbf2dc;
         width: 100%;
         height: 100%;
-        clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
+        // clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
         display: flex;
         flex-direction: column;
         justify-content: center;

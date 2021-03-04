@@ -12,29 +12,13 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   name: 'PhoneMenu',
-  data() {
-    return {
-      menuItems: [
-        {
-          name: 'Home',
-          url: '#hero',
-        },
-        {
-          name: 'Nearby Attractions',
-          url: '#nearby',
-        },
-        {
-          name: 'Amenities',
-          url: '#amenities',
-        },
-        {
-          name: 'Packages',
-          url: '#packages',
-        },
-      ],
-    }
+  computed: {
+    menuItems() {
+      return menuItems
+    },
   },
 }
 </script>
@@ -44,7 +28,7 @@ export default {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 175px;
+  width: 200px;
   height: 100vh;
   background: #fff8e8;
   z-index: 100;

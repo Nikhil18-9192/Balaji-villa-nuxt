@@ -12,28 +12,11 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   data() {
     return {
       scrollPosition: 0,
-      menuItems: [
-        {
-          name: 'Home',
-          url: '#hero',
-        },
-        {
-          name: 'Nearby Attractions',
-          url: '#nearby',
-        },
-        {
-          name: 'Amenities',
-          url: '#amenities',
-        },
-        {
-          name: 'Packages',
-          url: '#packages',
-        },
-      ],
     }
   },
   mounted() {
@@ -45,6 +28,11 @@ export default {
   methods: {
     onScroll() {
       this.scrollPosition = window.pageYOffset
+    },
+  },
+  computed: {
+    menuItems() {
+      return menuItems
     },
   },
 }

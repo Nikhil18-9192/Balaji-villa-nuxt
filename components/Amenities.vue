@@ -44,29 +44,28 @@ export default {
   data() {
     return {
       col1: [
-        { title: 'parking', icon: '/car.svg' },
-        { title: 'parking', icon: '/car.svg' },
-        { title: 'parking', icon: '/car.svg' },
+        { title: 'Parking', icon: '/parking.svg' },
+        { title: 'Ramp', icon: '/ramp.svg' },
+        { title: 'AC', icon: '/ac.svg' },
       ],
       col2: [
-        { title: 'ramp', icon: '/chair.svg' },
-        { title: 'ramp', icon: '/chair.svg' },
-        { title: 'ramp', icon: '/chair.svg' },
+        { title: 'first aid', icon: '/first-aid.svg' },
+        { title: 'shower', icon: '/shower.svg' },
+        { title: 'Tata Sky', icon: '/tata_sky.svg' },
       ],
       col3: [
-        { title: 'ac', icon: '/ac.svg' },
-        { title: 'ac', icon: '/ac.svg' },
-        { title: 'ac', icon: '/ac.svg' },
+        { title: 'Equipped Kitchen', icon: '/kitchen.svg' },
+        { title: 'cctv', icon: '/cctv.svg' },
+        { title: 'bbq', icon: '/grill.svg' },
       ],
       col4: [
-        { title: 'first aid', icon: '/first-aid.svg' },
-        { title: 'first aid', icon: '/first-aid.svg' },
-        { title: 'first aid', icon: '/first-aid.svg' },
+        { title: 'Bonfire', icon: '/fire.svg' },
+        { title: 'In-house games', icon: '/puzzle.svg' },
+        { title: 'pet friendly', icon: '/pet.svg' },
       ],
       col5: [
-        { title: 'shower', icon: '/shower.svg' },
-        { title: 'shower', icon: '/shower.svg' },
-        { title: 'shower', icon: '/shower.svg' },
+        { title: 'Flat screen TV', icon: '/tv.svg' },
+        { title: 'Free WIFI spot', icon: '/wifi.svg' },
       ],
     }
   },
@@ -120,11 +119,11 @@ export default {
   }
   .grid-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     @include for-phone-only {
       flex-direction: column;
+      flex-wrap: wrap;
     }
     .col {
       position: relative;
@@ -140,7 +139,7 @@ export default {
         flex-direction: row;
         padding: 0;
         gap: 30px;
-        min-height: 125px;
+        min-height: 150px;
         flex-wrap: nowrap;
       }
       @include for-tablet-only {
@@ -148,7 +147,7 @@ export default {
         min-height: 510px;
       }
       .item {
-        min-height: 80px;
+        min-height: 100px;
         text-align: center;
         @include for-phone-only {
           min-width: 80px;
@@ -178,7 +177,7 @@ export default {
           rgba(196, 196, 196, 0) 100%
         );
         width: 2px;
-        height: 500px;
+        height: 515px;
         position: absolute;
         right: 0;
         top: 0;
@@ -201,10 +200,10 @@ export default {
         flex-direction: row;
         padding: 0;
         gap: 30px;
-        min-height: 125px;
+        min-height: 150px;
       }
       .item {
-        min-height: 80px;
+        min-height: 100px;
         text-align: center;
         @include for-phone-only {
           min-width: 80px;
