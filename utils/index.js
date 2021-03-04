@@ -15,6 +15,10 @@ const menuItems = [
     name: 'Packages',
     url: '#packages',
   },
+  {
+    name: 'Gallary',
+    url: '/gallary',
+  },
 ]
 const slides = [
   {
@@ -68,4 +72,16 @@ const slides = [
   },
 ]
 
-export { menuItems, slides }
+const images = [
+  '/gallary1.jpg',
+  '/gallary2.jpg',
+  '/gallary1.jpg',
+  '/gallary2.jpg',
+  '/gallary1.jpg',
+  '/gallary2.jpg',
+  '/gallary1.jpg',
+  '/gallary2.jpg',
+  '/gallary1.jpg',
+]
+
+export { menuItems, slides, images }

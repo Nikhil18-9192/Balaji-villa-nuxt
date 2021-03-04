@@ -23,7 +23,9 @@
       </p>
       <h4 class="title">:: Contact Us ::</h4>
       <p class="text">+91 93 7373 1717 | +91 89 7598 8689</p>
-      <a href="#" class="gallery-btn">VIEW GALLERY</a>
+      <button class="gallery-btn" @click="$router.push('/gallary')">
+        VIEW GALLERY
+      </button>
     </div>
   </div>
 </template>
@@ -100,6 +102,7 @@ export default {}
       padding: 8px 25px;
       border-radius: 25px;
       color: #fff;
+      background-color: transparent;
       text-decoration: none;
     }
   }
