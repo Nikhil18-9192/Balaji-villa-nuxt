@@ -104,6 +104,7 @@ export default {}
       color: #fff;
       background-color: transparent;
       text-decoration: none;
+      cursor: pointer;
     }
   }
 }
