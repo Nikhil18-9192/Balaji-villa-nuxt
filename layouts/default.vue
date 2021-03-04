@@ -32,7 +32,7 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="scss">
 html {
   scroll-behavior: smooth;
 }
@@ -40,6 +40,15 @@ body {
   font-family: 'Marcellus', serif;
   margin: 0;
   padding: 0;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f9f9f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 }
 h1,
 h2,
@@ -50,6 +59,7 @@ p {
   padding: 0;
   margin: 0;
 }
+
 .menuModal {
   position: fixed;
   width: 100%;
