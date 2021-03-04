@@ -44,14 +44,14 @@ export default {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 150px;
+  width: 175px;
   height: 100vh;
   background: #fff8e8;
   z-index: 100;
-  padding: 80px 25px;
+  padding: 95px 15px 0 35px;
   border-radius: 4px;
   .menu-list {
-    margin-bottom: 12px;
+    margin-bottom: 40px;
     position: relative;
     a {
       color: #000;

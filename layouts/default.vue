@@ -2,6 +2,11 @@
   <div>
     <Toolbar />
     <MenuButton />
+    <div
+      v-if="menuState"
+      class="menuModal"
+      @click="$store.commit('toggleMenuState')"
+    ></div>
     <transition name="slide">
       <PhoneMenu v-if="menuState" />
     </transition>
@@ -45,12 +50,21 @@ p {
   padding: 0;
   margin: 0;
 }
+.menuModal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: transparent;
+  top: 0;
+  left: 0;
+}
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.5, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.5, 1);
 }
 .slide-enter,
-.slide-leave-active {
+.slide-leave-to {
   transform: translateX(-100%);
 }
 </style>

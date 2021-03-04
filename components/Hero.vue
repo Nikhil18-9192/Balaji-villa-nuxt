@@ -9,7 +9,10 @@
       muted
     ></video>
     <div class="content">
-      <img src="logo.png" alt="" />
+      <div class="logo">
+        <img src="logo.png" alt="" />
+        <h1>BALAJI VILLA</h1>
+      </div>
       <p class="para">
         Balaji Villa is one of the famous luxurious 4 bedrooms bunglow in
         Panhala, Kolhapur. We provide Luxurious Bunglow Booking On Rent For
@@ -60,11 +63,20 @@ export default {}
     letter-spacing: 0.12em;
     color: #fff;
 
-    img {
-      object-fit: contain;
-      max-width: 300px;
-      width: 100%;
-      margin-bottom: 40px;
+    .logo {
+      img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+      }
+      h1 {
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 41px;
+        letter-spacing: 0.21em;
+        color: #ffffff;
+        padding: 10px 0 40px 0;
+      }
     }
     .para {
       width: 781px;

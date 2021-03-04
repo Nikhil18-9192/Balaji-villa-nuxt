@@ -1,6 +1,5 @@
 <template>
   <div id="amenities">
-    <img class="bg-img" src="plant.png" alt="" />
     <div class="title">
       <h1>Amenities</h1>
       <img src="title-img2.png" alt="" />
@@ -78,6 +77,10 @@ export default {
 #amenities {
   position: relative;
   padding: 40px 88px 140px 88px;
+  background-image: url('/plant.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
   @include for-phone-only {
     padding: 40px 30px 40px 30px;
   }
@@ -117,10 +120,12 @@ export default {
   }
   .grid-container {
     display: flex;
-    // gap: 60px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    @include for-phone-only {
+      flex-direction: column;
+    }
     .col {
       position: relative;
       padding: 0 80px;
@@ -132,9 +137,11 @@ export default {
       align-items: center;
       min-height: 470px;
       @include for-phone-only {
-        padding: 0 30px;
+        flex-direction: row;
+        padding: 0;
         gap: 30px;
-        min-height: 380px;
+        min-height: 125px;
+        flex-wrap: nowrap;
       }
       @include for-tablet-only {
         padding: 0 60px;
@@ -143,6 +150,9 @@ export default {
       .item {
         min-height: 80px;
         text-align: center;
+        @include for-phone-only {
+          min-width: 80px;
+        }
         img {
           height: 40px;
           width: 40px;
@@ -188,14 +198,17 @@ export default {
       align-items: center;
       min-height: 470px;
       @include for-phone-only {
-        padding: 0 45px;
-        gap: 60px;
         flex-direction: row;
-        min-height: 250px;
+        padding: 0;
+        gap: 30px;
+        min-height: 125px;
       }
       .item {
         min-height: 80px;
         text-align: center;
+        @include for-phone-only {
+          min-width: 80px;
+        }
         img {
           height: 40px;
           width: 40px;
