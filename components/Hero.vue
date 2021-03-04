@@ -35,7 +35,7 @@ export default {}
   width: 100%;
   height: 793px;
   @include for-phone-only {
-    height: 635px;
+    height: 100vh;
   }
   .overlay {
     background: rgba(0, 0, 0, 0.493);
@@ -59,9 +59,7 @@ export default {}
     line-height: 146.69%;
     letter-spacing: 0.12em;
     color: #fff;
-    @include for-phone-only {
-      top: 30px;
-    }
+
     img {
       object-fit: contain;
       max-width: 300px;

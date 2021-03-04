@@ -25,17 +25,21 @@
             @mouseover="hoverEvent(i)"
             @mouseleave="outEvent"
           >
-            <img
-              v-if="!hover || i !== index"
-              class="image"
-              :src="slide.src"
-              alt=""
-            />
-            <div class="text" v-if="hover && i === index">
-              <h4>{{ slide.title }}</h4>
-              <hr />
-              <p>{{ slide.desc }}</p>
-            </div>
+            <transition name="image">
+              <img
+                v-if="!hover || i !== index"
+                class="image"
+                :src="slide.src"
+                alt=""
+              />
+            </transition>
+            <transition name="text">
+              <div class="text" v-if="hover && i === index">
+                <h4>{{ slide.title }}</h4>
+                <hr />
+                <p>{{ slide.desc }}</p>
+              </div>
+            </transition>
           </div>
         </slide>
       </carousel>
@@ -145,21 +149,24 @@ export default {
   .carousel {
     width: 100%;
     position: relative;
+    .slide-content {
+      width: 326px;
+      height: 345px;
+      overflow: hidden;
+    }
     .slide {
       width: 100%;
       cursor: pointer;
       .image {
-        transition: 0.3s ease all;
         object-fit: contain;
-        width: 326px;
-        height: 345px;
+        width: 100%;
+        height: 100%;
         clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
       }
       .text {
-        transition: 0.3s ease all;
         background: #fbf2dc;
-        width: 326px;
-        height: 345px;
+        width: 100%;
+        height: 100%;
         clip-path: polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%);
         display: flex;
         flex-direction: column;
@@ -192,5 +199,23 @@ export default {
       }
     }
   }
+}
+
+.image-enter-active,
+.image-leave-active {
+  transition: opacity 0.3s;
+}
+.image-enter,
+.image-leave-to {
+  opacity: 0;
+}
+
+.text-enter-active,
+.text-leave-active {
+  transition: opacity 0.3s;
+}
+.text-enter,
+.text-leave-to {
+  opacity: 0;
 }
 </style>

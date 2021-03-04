@@ -110,12 +110,12 @@ export default {
       background: rgb(255, 255, 255);
       background: linear-gradient(
         90deg,
-        rgba(255, 255, 255, 1) 20%,
-        rgba(0, 0, 0, 1) 50%,
-        rgba(255, 255, 255, 1) 80%
+        rgba(255, 255, 255, 1) 15%,
+        rgba(196, 196, 196, 1) 50%,
+        rgba(255, 255, 255, 1) 85%
       );
       height: 1px;
-      width: 210px;
+      width: 230px;
       margin: 18px auto;
     }
     .bottom-txt {

@@ -56,9 +56,15 @@ export default {
   top: 273px;
   left: 88px;
   z-index: 1000;
+  @include for-phone-only {
+    display: none;
+  }
   .menu {
     position: relative;
     margin-bottom: 30px;
+    a {
+      transition: 0.3s ease all;
+    }
   }
   .black {
     color: #000;
@@ -67,7 +73,6 @@ export default {
     font-size: 14px;
     line-height: 146.69%;
     letter-spacing: 0.12em;
-    text-shadow: 1px 1px #0c0b0b7e;
     &.nuxt-link-exact-active {
       &::after {
         content: '';
@@ -88,7 +93,6 @@ export default {
     font-size: 14px;
     line-height: 146.69%;
     letter-spacing: 0.12em;
-    text-shadow: 1px 1px #0c0b0b7e;
     &.nuxt-link-exact-active {
       &::after {
         content: '';

@@ -1,10 +1,32 @@
 <template>
   <div>
     <Toolbar />
+    <MenuButton />
+    <transition name="slide">
+      <PhoneMenu v-if="menuState" />
+    </transition>
     <Nuxt />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      menuState: false,
+    }
+  },
+  computed: {
+    storeMenuState: function () {
+      return this.$store.getters.getMenuState
+    },
+  },
+  watch: {
+    storeMenuState: function (newState) {
+      this.menuState = newState
+    },
+  },
+}
+</script>
 <style>
 html {
   scroll-behavior: smooth;
@@ -22,5 +44,13 @@ h5,
 p {
   padding: 0;
   margin: 0;
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.5, 1);
+}
+.slide-enter,
+.slide-leave-active {
+  transform: translateX(-100%);
 }
 </style>
