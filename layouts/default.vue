@@ -11,6 +11,7 @@
       <PhoneMenu v-if="menuState" />
     </transition>
     <Nuxt />
+    <Footer />
   </div>
 </template>
 <script>

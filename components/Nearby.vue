@@ -6,6 +6,8 @@
     </div>
     <client-only>
       <carousel
+        ref="slider"
+        v-model="currentPage"
         class="carousel"
         :perPageCustom="[
           [320, 1],
@@ -15,7 +17,7 @@
           [1800, 4],
         ]"
         :loop="true"
-        :autoplay="true"
+        :autoplay="false"
         :autoplayTimeout="5000"
         :mouse-drag="true"
         :paginationEnabled="false"
@@ -54,6 +56,10 @@
         </slide>
       </carousel>
     </client-only>
+    <div class="control-btn">
+      <img src="/right.svg" alt="" @click="next" />
+      <img src="/left.svg" alt="" @click="prev" />
+    </div>
   </div>
 </template>
 
@@ -70,7 +76,7 @@ export default {
     return {
       hover: false,
       index: -1,
-
+      currentPage: 0,
       shapes: [
         'polygon(61% 0, 100% 51%, 66% 100%, 0 73%, 0 33%)',
         'polygon(10% 14%, 53% 1%, 100% 44%, 72% 91%, 15% 94%, 0% 50%)',
@@ -81,6 +87,7 @@ export default {
     }
   },
   mounted() {},
+
   methods: {
     hoverEvent(i) {
       this.index = i
@@ -89,6 +96,16 @@ export default {
     outEvent() {
       this.index = -1
       this.hover = false
+    },
+    next() {
+      this.currentPage < this.$refs.slider.pageCount - 1
+        ? this.currentPage++
+        : (this.currentPage = 0)
+    },
+    prev() {
+      this.currentPage <= 0
+        ? (this.currentPage = this.$refs.slider.pageCount - 1)
+        : this.currentPage--
     },
   },
   computed: {
@@ -186,6 +203,15 @@ export default {
           width: 253px;
         }
       }
+    }
+  }
+  .control-btn {
+    margin-top: 20px;
+    img {
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+      float: right;
     }
   }
 }

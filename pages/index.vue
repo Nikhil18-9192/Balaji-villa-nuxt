@@ -4,6 +4,7 @@
     <Nearby />
     <Amenities />
     <Packages />
+    <Map />
   </div>
 </template>
 

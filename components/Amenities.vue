@@ -134,6 +134,9 @@ export default {
       flex-direction: column;
       flex-wrap: wrap;
     }
+    @include for-tablet-only {
+      flex-wrap: wrap;
+    }
     .col {
       position: relative;
       padding: 0 80px;
@@ -152,14 +155,17 @@ export default {
         flex-wrap: nowrap;
       }
       @include for-tablet-only {
-        padding: 0 60px;
-        min-height: 510px;
+        padding: 0 30px;
+        min-height: 530px;
       }
       .item {
         min-height: 100px;
         text-align: center;
         @include for-phone-only {
           min-width: 80px;
+        }
+        @include for-tablet-only {
+          min-width: 125px;
         }
         img {
           height: 40px;

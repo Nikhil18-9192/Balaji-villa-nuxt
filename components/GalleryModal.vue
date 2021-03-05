@@ -31,16 +31,14 @@ export default {
   },
   methods: {
     prev() {
-      this.currentSlide--
-      if (this.currentSlide < 0) {
-        this.currentSlide = 0
-      }
+      this.currentSlide <= 0
+        ? (this.currentSlide = this.images.length - 1)
+        : this.currentSlide--
     },
     next() {
-      this.currentSlide++
-      if (this.currentSlide > this.images.length - 1) {
-        this.currentSlide = this.images.length - 1
-      }
+      this.currentSlide >= this.images.length - 1
+        ? (this.currentSlide = 0)
+        : this.currentSlide++
     },
   },
 }
