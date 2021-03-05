@@ -1,7 +1,7 @@
 <template>
   <div id="gallery">
     <div class="route-btn" @click="$router.push('/')">
-      <img src="/arrow.svg" alt="" />
+      <img :src="require('~/assets/icons/arrow.svg')" alt="" />
       <p>Home</p>
     </div>
     <div class="title">
@@ -19,7 +19,7 @@
 <script>
 import { images } from '@/utils'
 export default {
-  name: 'GallaryPage',
+  name: 'GalleryPage',
   computed: {
     images() {
       return images
@@ -95,6 +95,7 @@ export default {
     margin-top: 70px;
     @include for-phone-only {
       grid-template-columns: auto;
+      gap: 30px;
     }
     @include for-tablet-only {
       gap: 30px;

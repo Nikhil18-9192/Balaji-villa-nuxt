@@ -85,6 +85,9 @@ export default {
       text-transform: capitalize;
       color: #515151;
       margin-bottom: 20px;
+      @include for-phone-only {
+        font-size: 42px;
+      }
     }
     img {
       object-fit: contain;

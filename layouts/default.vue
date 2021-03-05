@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Toolbar v-if="$route.path !== '/gallary'" />
-    <MenuButton v-if="$route.path !== '/gallary'" />
+    <Toolbar v-if="$route.path !== '/gallery'" />
+    <MenuButton v-if="$route.path !== '/gallery'" />
     <div
       v-if="menuState"
       class="menuModal"

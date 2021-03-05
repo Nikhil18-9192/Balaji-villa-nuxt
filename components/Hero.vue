@@ -23,7 +23,7 @@
       </p>
       <h4 class="title">:: Contact Us ::</h4>
       <p class="text">+91 93 7373 1717 | +91 89 7598 8689</p>
-      <button class="gallery-btn" @click="$router.push('/gallary')">
+      <button class="gallery-btn" @click="$router.push('/gallery')">
         VIEW GALLERY
       </button>
     </div>
@@ -39,9 +39,7 @@ export default {}
   position: relative;
   width: 100%;
   height: 793px;
-  @include for-phone-only {
-    height: 100vh;
-  }
+
   .overlay {
     background: rgba(0, 0, 0, 0.493);
     position: absolute;
@@ -105,6 +103,7 @@ export default {}
       background-color: transparent;
       text-decoration: none;
       cursor: pointer;
+      outline: none;
     }
   }
 }

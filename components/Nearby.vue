@@ -8,6 +8,7 @@
       <carousel
         class="carousel"
         :perPageCustom="[
+          [320, 1],
           [375, 1],
           [768, 2],
           [1200, 3],
@@ -124,6 +125,9 @@ export default {
       text-transform: capitalize;
       color: #515151;
       margin-bottom: 20px;
+      @include for-phone-only {
+        font-size: 42px;
+      }
     }
     img {
       object-fit: contain;

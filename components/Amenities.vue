@@ -44,28 +44,34 @@ export default {
   data() {
     return {
       col1: [
-        { title: 'Parking', icon: '/parking.svg' },
-        { title: 'Ramp', icon: '/ramp.svg' },
-        { title: 'AC', icon: '/ac.svg' },
+        { title: 'Parking', icon: require('~/assets/icons/parking.svg') },
+        { title: 'Ramp', icon: require('~/assets/icons/ramp.svg') },
+        { title: 'AC', icon: require('~/assets/icons/ac.svg') },
       ],
       col2: [
-        { title: 'first aid', icon: '/first-aid.svg' },
-        { title: 'shower', icon: '/shower.svg' },
-        { title: 'Tata Sky', icon: '/tata_sky.svg' },
+        { title: 'first aid', icon: require('~/assets/icons/first-aid.svg') },
+        { title: 'shower', icon: require('~/assets/icons/shower.svg') },
+        { title: 'Tata Sky', icon: require('~/assets/icons/tata_sky.svg') },
       ],
       col3: [
-        { title: 'Equipped Kitchen', icon: '/kitchen.svg' },
-        { title: 'cctv', icon: '/cctv.svg' },
-        { title: 'bbq', icon: '/grill.svg' },
+        {
+          title: 'Equipped Kitchen',
+          icon: require('~/assets/icons/kitchen.svg'),
+        },
+        { title: 'cctv', icon: require('~/assets/icons/cctv.svg') },
+        { title: 'bbq', icon: require('~/assets/icons/grill.svg') },
       ],
       col4: [
-        { title: 'Bonfire', icon: '/fire.svg' },
-        { title: 'In-house games', icon: '/puzzle.svg' },
-        { title: 'pet friendly', icon: '/pet.svg' },
+        { title: 'Bonfire', icon: require('~/assets/icons/fire.svg') },
+        {
+          title: 'In-house games',
+          icon: require('~/assets/icons/puzzle.svg'),
+        },
+        { title: 'pet friendly', icon: require('~/assets/icons/pet.svg') },
       ],
       col5: [
-        { title: 'Flat screen TV', icon: '/tv.svg' },
-        { title: 'Free WIFI spot', icon: '/wifi.svg' },
+        { title: 'Flat screen TV', icon: require('~/assets/icons/tv.svg') },
+        { title: 'Free WIFI spot', icon: require('~/assets/icons/wifi.svg') },
       ],
     }
   },
@@ -110,6 +116,9 @@ export default {
       text-transform: capitalize;
       color: #515151;
       margin-bottom: 20px;
+      @include for-phone-only {
+        font-size: 42px;
+      }
     }
     img {
       object-fit: contain;

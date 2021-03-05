@@ -16,8 +16,8 @@ const menuItems = [
     url: '#packages',
   },
   {
-    name: 'Gallary',
-    url: '/gallary',
+    name: 'Gallery',
+    url: '/gallery',
   },
 ]
 const slides = [
