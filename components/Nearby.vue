@@ -17,8 +17,8 @@
           [1800, 4],
         ]"
         :loop="true"
-        :autoplay="false"
-        :autoplayTimeout="5000"
+        :autoplay="true"
+        :autoplayTimeout="10000"
         :mouse-drag="true"
         :paginationEnabled="false"
       >
