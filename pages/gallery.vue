@@ -1,15 +1,26 @@
 <template>
   <div id="gallery">
+    <GalleryModal
+      v-if="modal"
+      :index="selectedIndex"
+      :images="images"
+      @dismiss="modal = false"
+    />
     <div class="route-btn" @click="$router.push('/')">
       <img :src="'/icons/arrow.svg'" alt="" />
       <p>Home</p>
     </div>
     <div class="title">
       <h1>Gallery</h1>
-      <img src="title-img2.png" alt="" />
+      <img src="/title-img2.png" alt="" />
     </div>
     <div class="image-container">
-      <div class="image" v-for="(item, i) in images" :key="i">
+      <div
+        class="image"
+        v-for="(item, i) in images"
+        :key="i"
+        @click="viewImage(i)"
+      >
         <img :src="item" alt="" />
       </div>
     </div>
@@ -20,9 +31,21 @@
 import { images } from '@/utils'
 export default {
   name: 'GalleryPage',
+  data() {
+    return {
+      selectedIndex: 0,
+      modal: false,
+    }
+  },
   computed: {
     images() {
       return images
+    },
+  },
+  methods: {
+    viewImage(i) {
+      this.selectedIndex = i
+      this.modal = true
     },
   },
 }
@@ -105,6 +128,7 @@ export default {
       max-width: 349px;
       height: 193px;
       transition: 0.3s ease all;
+      cursor: pointer;
       @include for-big-desktop-up {
         max-width: 449px;
         height: 225px;
