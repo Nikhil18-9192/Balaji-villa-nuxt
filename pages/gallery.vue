@@ -1,7 +1,7 @@
 <template>
   <div id="gallery">
     <div class="route-btn" @click="$router.push('/')">
-      <img :src="require('~/assets/icons/arrow.svg')" alt="" />
+      <img :src="'/icons/arrow.svg'" alt="" />
       <p>Home</p>
     </div>
     <div class="title">

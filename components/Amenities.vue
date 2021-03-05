@@ -44,34 +44,34 @@ export default {
   data() {
     return {
       col1: [
-        { title: 'Parking', icon: require('~/assets/icons/parking.svg') },
-        { title: 'Ramp', icon: require('~/assets/icons/ramp.svg') },
-        { title: 'AC', icon: require('~/assets/icons/ac.svg') },
+        { title: 'Parking', icon: '/icons/parking.svg' },
+        { title: 'Ramp', icon: '/icons/ramp.svg' },
+        { title: 'AC', icon: '/icons/ac.svg' },
       ],
       col2: [
-        { title: 'first aid', icon: require('~/assets/icons/first-aid.svg') },
-        { title: 'shower', icon: require('~/assets/icons/shower.svg') },
-        { title: 'Tata Sky', icon: require('~/assets/icons/tata_sky.svg') },
+        { title: 'first aid', icon: '/icons/first-aid.svg' },
+        { title: 'shower', icon: '/icons/shower.svg' },
+        { title: 'Tata Sky', icon: '/icons/tata_sky.svg' },
       ],
       col3: [
         {
           title: 'Equipped Kitchen',
-          icon: require('~/assets/icons/kitchen.svg'),
+          icon: '/icons/kitchen.svg',
         },
-        { title: 'cctv', icon: require('~/assets/icons/cctv.svg') },
-        { title: 'bbq', icon: require('~/assets/icons/grill.svg') },
+        { title: 'cctv', icon: '/icons/cctv.svg' },
+        { title: 'bbq', icon: '/icons/grill.svg' },
       ],
       col4: [
-        { title: 'Bonfire', icon: require('~/assets/icons/fire.svg') },
+        { title: 'Bonfire', icon: '/icons/fire.svg' },
         {
           title: 'In-house games',
-          icon: require('~/assets/icons/puzzle.svg'),
+          icon: '/icons/puzzle.svg',
         },
-        { title: 'pet friendly', icon: require('~/assets/icons/pet.svg') },
+        { title: 'pet friendly', icon: '/icons/pet.svg' },
       ],
       col5: [
-        { title: 'Flat screen TV', icon: require('~/assets/icons/tv.svg') },
-        { title: 'Free WIFI spot', icon: require('~/assets/icons/wifi.svg') },
+        { title: 'Flat screen TV', icon: '/icons/tv.svg' },
+        { title: 'Free WIFI spot', icon: '/icons/wifi.svg' },
       ],
     }
   },
