@@ -139,10 +139,10 @@ export default {
     }
     .col {
       position: relative;
-      padding: 0 80px;
+      padding: 0 30px;
       display: flex;
       flex-wrap: wrap;
-      gap: 80px;
+      gap: 45px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -159,13 +159,18 @@ export default {
         min-height: 530px;
       }
       .item {
-        min-height: 100px;
+        height: 125px;
         text-align: center;
+        width: 125px;
+        padding: 10px;
+        border-radius: 8px;
+        transition: 0.3s ease all;
+        cursor: pointer;
         @include for-phone-only {
-          min-width: 80px;
+          width: 80px;
         }
         @include for-tablet-only {
-          min-width: 125px;
+          width: 125px;
         }
         img {
           height: 40px;
@@ -173,7 +178,7 @@ export default {
           object-fit: contain;
         }
         p {
-          margin-top: 30px;
+          margin-top: 25px;
           font-weight: normal;
           font-size: 14px;
           line-height: 18px;
@@ -181,6 +186,11 @@ export default {
           letter-spacing: 0.155em;
           text-transform: uppercase;
           color: #060606;
+        }
+        &:hover {
+          box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          -webkit-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          -moz-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
         }
       }
       &::after {
@@ -203,10 +213,10 @@ export default {
     }
     .col-last {
       position: relative;
-      padding: 0 80px;
+      padding: 0 30px;
       display: flex;
       flex-wrap: wrap;
-      gap: 80px;
+      gap: 45px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -218,10 +228,16 @@ export default {
         min-height: 150px;
       }
       .item {
-        min-height: 100px;
+        height: 125px;
         text-align: center;
+        width: 125px;
+        padding: 10px;
+        border-radius: 8px;
+        transition: 0.3s ease all;
+        cursor: pointer;
         @include for-phone-only {
-          min-width: 80px;
+          width: 80px;
+          padding: 0;
         }
         img {
           height: 40px;
@@ -237,6 +253,11 @@ export default {
           letter-spacing: 0.155em;
           text-transform: uppercase;
           color: #060606;
+        }
+        &:hover {
+          box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          -webkit-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          -moz-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
         }
       }
     }
