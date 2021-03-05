@@ -97,7 +97,7 @@ export default {}
     }
     .gallery-btn {
       border: 1px solid #fff;
-      padding: 8px 25px;
+      padding: 8px 24px;
       border-radius: 25px;
       color: #fff;
       background-color: transparent;
