@@ -150,8 +150,8 @@ export default {
       @include for-phone-only {
         flex-direction: row;
         padding: 0;
-        gap: 30px;
-        min-height: 150px;
+        gap: 20px;
+        min-height: 170px;
         flex-wrap: nowrap;
       }
       @include for-tablet-only {
@@ -167,7 +167,8 @@ export default {
         transition: 0.3s ease all;
         cursor: pointer;
         @include for-phone-only {
-          width: 80px;
+          height: 145px;
+          width: 90px;
         }
         @include for-tablet-only {
           width: 125px;
@@ -188,9 +189,8 @@ export default {
           color: #060606;
         }
         &:hover {
-          box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
-          -webkit-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
-          -moz-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.109);
+          transform: translateY(-4px);
         }
       }
       &::after {
@@ -225,7 +225,7 @@ export default {
         flex-direction: row;
         padding: 0;
         gap: 30px;
-        min-height: 150px;
+        min-height: 170px;
       }
       .item {
         height: 125px;
@@ -236,8 +236,9 @@ export default {
         transition: 0.3s ease all;
         cursor: pointer;
         @include for-phone-only {
-          width: 80px;
-          padding: 0;
+          height: 145px;
+          width: 90px;
+          padding: 10px;
         }
         img {
           height: 40px;
@@ -253,11 +254,14 @@ export default {
           letter-spacing: 0.155em;
           text-transform: uppercase;
           color: #060606;
+          @include for-phone-only {
+            margin-top: 20px;
+          }
         }
         &:hover {
-          box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
-          -webkit-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
-          -moz-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.59);
+          box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.2);
+          -webkit-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 2px 11px -1px rgba(0, 0, 0, 0.2);
         }
       }
     }

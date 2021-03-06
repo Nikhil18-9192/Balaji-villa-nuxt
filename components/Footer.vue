@@ -2,8 +2,18 @@
   <div id="footer">
     <div class="footer-text">
       <p class="number">
-        <img class="wtsapp" src="/whatsapp.png" alt="" /> +91 93 7373 1717 | +91
-        89 7598 8689
+        <img class="wtsapp" src="/whatsapp.png" alt="" /><a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=9373731717"
+          >+91 93 7373 1717
+        </a>
+        |
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=9373731717"
+        >
+          +91 89 7598 8689</a
+        >
       </p>
       <p class="address">
         C S No 643 Opp Panhala Club, Panhala, Maharashtra 416114
@@ -54,6 +64,10 @@ export default {}
         height: 30px;
         object-fit: contain;
         margin-right: 15px;
+      }
+      a {
+        color: #000000;
+        text-decoration: none;
       }
     }
     .address {
