@@ -2,13 +2,19 @@
   <div class="card-wrap">
     <h4>{{ title }}</h4>
     <div class="card-element">
-      <div class="card">
-        <div class="top">
-          <h1>{{ price }}</h1>
-          <p>{{ quantity }}</p>
+      <a
+        target="_blank"
+        :href="`https://api.whatsapp.com/send?text=I am interested in ${title}!&phone=+919373731717`"
+        rel="noreferrer"
+      >
+        <div class="card">
+          <div class="top">
+            <h1>{{ price }}</h1>
+            <p>{{ quantity }}</p>
+          </div>
+          <slot></slot>
         </div>
-        <slot></slot>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -39,6 +45,10 @@ export default {
     position: relative;
     filter: drop-shadow(18px 25px 0px rgba(0, 0, 0, 0.09));
   }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
   .card {
     position: relative;
     height: 463px;
@@ -46,6 +56,7 @@ export default {
     background: #fff;
     clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
     border: 1px solid #c8c8c8;
+    transition: 0.3s ease all;
     .top {
       background: #fff8e8;
       display: flex;
@@ -90,6 +101,9 @@ export default {
       bottom: 37px;
       right: -17px;
       transform: rotate(-33.5deg);
+    }
+    &:hover {
+      transform: translateY(-8px);
     }
   }
 }
