@@ -1,13 +1,23 @@
 <template>
   <div id="hero">
     <div class="overlay"></div>
-    <video
+    <!-- <video
       src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
       autoplay
       loop
       playsinline
       muted
-    ></video>
+    ></video> -->
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/EuxrjuYDe1M?controls=0&amp;start=15&amp;autoplay=1&amp;mute=1&amp;loop=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
     <div class="content">
       <div class="logo">
         <img src="logo.png" alt="" />
@@ -38,7 +48,7 @@ export default {}
 #hero {
   position: relative;
   width: 100%;
-  height: 793px;
+  height: 90vh;
 
   .overlay {
     background: rgba(0, 0, 0, 0.493);
@@ -50,6 +60,13 @@ export default {}
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  iframe {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   .content {
     position: absolute;

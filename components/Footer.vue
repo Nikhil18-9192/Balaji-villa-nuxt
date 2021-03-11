@@ -4,14 +4,14 @@
       <p class="number">
         <img class="wtsapp" src="/whatsapp.png" alt="" /><a
           target="_blank"
-          href="https://api.whatsapp.com/send?phone=9373731717"
+          href="https://api.whatsapp.com/send?text=Hello!&phone=+919373731717"
           rel="noreferrer"
           >+91 93 7373 1717
         </a>
         |
         <a
           target="_blank"
-          href="https://api.whatsapp.com/send?phone=9373731717"
+          href="https://api.whatsapp.com/send?text=Hello!&phone=+919373731717"
           rel="noreferrer"
         >
           +91 89 7598 8689</a

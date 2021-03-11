@@ -16,12 +16,12 @@ const menuItems = [
     url: '#packages',
   },
   {
-    name: 'Contact',
-    url: '#map',
-  },
-  {
     name: 'Gallery',
     url: '/gallery',
+  },
+  {
+    name: 'Contact',
+    url: '#map',
   },
 ]
 const slides = [

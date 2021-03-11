@@ -75,6 +75,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    z-index: 111;
     @include for-phone-only {
       top: 25px;
       left: 10px;
