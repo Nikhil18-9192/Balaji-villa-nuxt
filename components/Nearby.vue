@@ -150,6 +150,7 @@ export default {
       object-fit: contain;
       max-width: 359px;
       width: 100%;
+      height: 100%;
     }
   }
   .carousel {

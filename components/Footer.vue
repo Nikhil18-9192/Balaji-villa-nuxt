@@ -5,12 +5,14 @@
         <img class="wtsapp" src="/whatsapp.png" alt="" /><a
           target="_blank"
           href="https://api.whatsapp.com/send?phone=9373731717"
+          rel="noreferrer"
           >+91 93 7373 1717
         </a>
         |
         <a
           target="_blank"
           href="https://api.whatsapp.com/send?phone=9373731717"
+          rel="noreferrer"
         >
           +91 89 7598 8689</a
         >
@@ -20,13 +22,19 @@
       </p>
     </div>
     <div class="social-icon">
-      <a target="_blank" href="#"><img src="/facebook.svg" alt="" /></a>
-      <a target="_blank" href="#"><img src="/instagram.svg" alt="" /></a>
+      <a target="_blank" href="#" rel="noreferrer"
+        ><img src="/facebook.svg" alt=""
+      /></a>
+      <a target="_blank" href="#" rel="noreferrer"
+        ><img src="/instagram.svg" alt=""
+      /></a>
     </div>
     <div class="branding">
       <h4>
         Designed with 💙 by
-        <a target="_blank" href="https://www.formecmedia.com">Formec Media</a>
+        <a target="_blank" href="https://www.formecmedia.com" rel="noreferrer"
+          >Formec Media</a
+        >
       </h4>
     </div>
   </div>
@@ -40,7 +48,7 @@ export default {}
 #footer {
   position: relative;
   background: #f9f9f9;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   padding-top: 40px;
   .footer-text {
     text-align: center;
@@ -76,7 +84,7 @@ export default {}
   }
   .social-icon {
     text-align: center;
-    padding: 20px 0;
+    padding: 35px 0;
     a {
       text-decoration: none;
       img {

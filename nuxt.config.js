@@ -13,7 +13,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          ' Balaji Villa is one of the famous luxurious 4 bedrooms bunglow in Panhala, Kolhapur. We provide Luxurious Bunglow Booking On Rent For Events , Functions ,Celebrations , Family Holiday. 4 A/C Master Bedrooms With Attach Toilets can accommodate up-to 25 people with Extra beds. Fully Equipped kitchen available. Provision for Party up-to 200 people in Garden area.',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },

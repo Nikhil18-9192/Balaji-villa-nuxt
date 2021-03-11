@@ -87,6 +87,7 @@ export default {
       object-fit: contain;
       max-width: 235px;
       width: 100%;
+      height: 100%;
     }
   }
   .card-container {
