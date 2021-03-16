@@ -5,6 +5,7 @@ export default {
     port: 3000,
     host: '0.0.0.0',
   },
+
   head: {
     title: 'Balaji Villa',
     htmlAttrs: {
@@ -45,7 +46,10 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['@nuxtjs/google-analytics'],
+  googleAnalytics: {
+    id: 'UA-134733760-3',
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
