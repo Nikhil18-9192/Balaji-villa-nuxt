@@ -1,23 +1,6 @@
 <template>
-  <div id="hero">
+  <div id="hero" :style="{ 'background-image': `url(${images[activeIndex]})` }">
     <div class="overlay"></div>
-    <!-- <video
-      src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
-      autoplay
-      loop
-      playsinline
-      muted
-    ></video> -->
-
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube-nocookie.com/embed/EuxrjuYDe1M?controls=0&amp;start=15&amp;autoplay=1&amp;mute=1&amp;loop=1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-
     <div class="content">
       <div class="logo">
         <img src="logo.png" alt="" />
@@ -41,7 +24,33 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Hero',
+  data() {
+    return {
+      images: [
+        '/gallery/3.jpg',
+        '/gallery/8.jpg',
+        '/gallery/25.jpg',
+        '/gallery/21.jpg',
+      ],
+      activeIndex: 0,
+      imageUrl: '',
+    }
+  },
+  mounted() {
+    this.bgImage()
+  },
+  methods: {
+    bgImage() {
+      setInterval(() => {
+        this.activeIndex < this.images.length - 1
+          ? this.activeIndex++
+          : (this.activeIndex = 0)
+      }, 4000)
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +58,10 @@ export default {}
   position: relative;
   width: 100%;
   height: 90vh;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s ease all;
   .overlay {
     background: rgba(0, 0, 0, 0.493);
     position: absolute;
