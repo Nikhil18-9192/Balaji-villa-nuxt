@@ -1,5 +1,6 @@
 <template>
   <div class="card-wrap">
+    <TermsAndConditions v-if="modal" :terms="terms" @dismiss="modal = false" />
     <h4>{{ title }}</h4>
     <div class="card-element">
       <a
@@ -13,6 +14,7 @@
             <p>{{ quantity }}</p>
           </div>
           <slot></slot>
+          <p class="terms" @click.prevent="modal = true">Terms & Conditions</p>
         </div>
       </a>
     </div>
@@ -21,7 +23,13 @@
 
 <script>
 export default {
-  props: ['title', 'price', 'quantity'],
+  name: 'PackageCard',
+  props: ['title', 'price', 'quantity', 'terms'],
+  data() {
+    return {
+      modal: false,
+    }
+  },
 }
 </script>
 
@@ -81,6 +89,14 @@ export default {
         text-align: center;
         letter-spacing: 0.035em;
       }
+    }
+    .terms {
+      font-size: 12px;
+      color: rgb(80, 80, 197);
+      cursor: pointer;
+      position: absolute;
+      bottom: 50px;
+      left: 80px;
     }
     &::after {
       content: '';

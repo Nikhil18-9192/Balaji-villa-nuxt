@@ -29,8 +29,14 @@
           <p>{{ item.title }}</p>
         </div>
       </div>
-      <div class="col-last">
+      <div class="col">
         <div class="item" v-for="(item, i) in col5" :key="i">
+          <img :src="item.icon" alt="" />
+          <p>{{ item.title }}</p>
+        </div>
+      </div>
+      <div class="col-last">
+        <div class="item" v-for="(item, i) in col6" :key="i">
           <img :src="item.icon" alt="" />
           <p>{{ item.title }}</p>
         </div>
@@ -72,6 +78,11 @@ export default {
       col5: [
         { title: 'Flat screen TV', icon: '/icons/tv.svg' },
         { title: 'Free WIFI spot', icon: '/icons/wifi.svg' },
+        { title: '24Hrs guard', icon: '/icons/guard.svg' },
+      ],
+      col6: [
+        { title: 'Separate drivers room', icon: '/icons/driver-room.svg' },
+        { title: '24Hrs generator backup', icon: '/icons/generator.svg' },
       ],
     }
   },
@@ -247,7 +258,7 @@ export default {
           object-fit: contain;
         }
         p {
-          margin-top: 30px;
+          margin-top: 12px;
           font-weight: normal;
           font-size: 14px;
           line-height: 18px;

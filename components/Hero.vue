@@ -36,18 +36,22 @@ export default {
       ],
       activeIndex: 0,
       imageUrl: '',
+      interval: null,
     }
   },
   mounted() {
     this.bgImage()
   },
+  beforeDestroy() {
+    clearInterval(this.interval)
+  },
   methods: {
     bgImage() {
-      setInterval(() => {
+      this.interval = setInterval(() => {
         this.activeIndex < this.images.length - 1
           ? this.activeIndex++
           : (this.activeIndex = 0)
-      }, 4000)
+      }, 3000)
     },
   },
 }
@@ -57,11 +61,11 @@ export default {
 #hero {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: 1s ease all;
+  transition: 2s ease all;
   .overlay {
     background: rgba(0, 0, 0, 0.493);
     position: absolute;
